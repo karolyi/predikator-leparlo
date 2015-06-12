@@ -4,23 +4,39 @@
  * Made by http://linkedin.com/in/karolyi
  */
 (function ($) {
-  var beepThree;
+  var audioElement;
   var ledTimeoutId;
   var litLedId = 0;
   var swingDirection;
   var maxMenuCount;
   var actualMenuId = 1;
   var jqMenuLeds;
+  var jqMenuLamps;
+  var jqMenuUl;
+  var jqMenuBgs;
+  var jqContentPages;
 
-  var onClickMenu = function (event) {
+  var onClickMenu = function () {
     var jqLiMenuElement = $(this);
     actualMenuId = parseInt(jqLiMenuElement.data('menuid'), 10);
-    if (beepThree.pause && beepThree.play) {
-      beepThree.pause();
-      beepThree.play();
+    if (audioElement.pause && audioElement.play) {
+      audioElement.pause();
+      audioElement.play();
     }
     swingDirection = 'forward';
     swingLedsToMenu();
+    var jqThisLamp = jqLiMenuElement.find('.lamp');
+    var jqThisMenuBg = jqLiMenuElement.find('.menubg');
+    var jqThisContentPage = jqContentPages.filter(
+      '.page-' + jqLiMenuElement.data('menuid'));
+    jqMenuLamps.not(jqThisLamp)
+      .find('img')
+      .attr('src', '/images/lampa_inactive.png');
+    jqThisLamp.find('img').attr('src', '/images/lampa_animation.gif');
+    jqMenuBgs.not(jqThisMenuBg).removeClass('active');
+    jqThisMenuBg.addClass('active');
+    jqContentPages.not(jqThisContentPage).removeClass('active');
+    jqThisContentPage.addClass('active');
   };
 
   var swingLedsToMenu = function () {
@@ -59,9 +75,13 @@
   var onReadyDocument = function () {
     // Startup functions
     $('.mainContent').height($(window).height());
-    beepThree = $('#beep-three')[0];
+    audioElement = $('#beep-three')[0];
     $('#menu-chooser li').click(onClickMenu);
     jqMenuLeds = $('#menu-chooser li .gomb');
+    jqMenuLamps = $('#menu-chooser li .lamp');
+    jqMenuBgs = $('#menu-chooser li .menubg');
+    jqMenuUl = $('#menu-chooser');
+    jqContentPages = $('.content-center-wrapper .page');
     maxMenuCount = jqMenuLeds.length;
   };
 
@@ -69,7 +89,7 @@
   //     var src = "images/lampa_animation.gif";
   //     obj.attr('src', src);
   //     var t = setTimeout(function(){
-  //         var src = obj.attr('src')=="/images/lampa_animation.png"?"/images/lampa_active.gif":"images/lampa_active.png";
+  //         var src = obj.attr('src')=="/images/lampa_animation.gif"?"/images/lampa_active.gif":"images/lampa_active.png";
   //         obj.attr('src', src);
   //         window.location = obj.data('location');
   //     }, 3000);

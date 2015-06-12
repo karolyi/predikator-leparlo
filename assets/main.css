@@ -2,10 +2,12 @@ body {
     margin: 0;
     background-color: #000;
     overflow-y: hidden;
+    font-family: 'Cutive Mono', Verdana, sans-serif;
+    color: #ddd;
 }
 
 .mainContent {
-    background: url(../images/palinkafozo_hatter.jpg) no-repeat top center;
+    background: url('/images/palinkafozo_hatter.jpg') no-repeat top center;
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
@@ -21,7 +23,7 @@ body {
 }
 
 .headLeft {
-    background: url(../images/predikator_leparlo_logo.png) no-repeat center top;
+    background: url('/images/predikator_leparlo_logo.png') no-repeat center top;
     width: 26.35%;
     height: 247px;
     float: left;
@@ -36,7 +38,7 @@ body {
 }
 
 .headCenter {
-    background: url(../images/palinkafozo_fejlec.png) no-repeat center top;
+    background: url('/images/palinkafozo_fejlec.png') no-repeat center top;
     width: 46.74%;
     height: 144px;
     float: left;
@@ -50,7 +52,7 @@ body {
 }
 
 .headRight {
-    background: url(../images/leparlo_menudisz.png) no-repeat center top;
+    background: url('/images/leparlo_menudisz.png') no-repeat center top;
     width: 22.9%;
     height: 99px;
     float: left;
@@ -64,8 +66,8 @@ body {
     background-size: 100%;
 }
 
-.contentLeft {
-    background: url(../images/leparlokeszulek.jpg) no-repeat center top;
+.content-left-wrapper {
+    background: url('/images/leparlokeszulek.jpg') no-repeat center top;
     float: left;
     width: 21.95%;
     height: 341px;
@@ -79,8 +81,8 @@ body {
     background-size: 100%;
 }
 
-.contentCenter {
-    background: url(../images/palinkafozo_tartalom.jpg) no-repeat center top;
+.content-center-wrapper {
+    background: url('/images/palinkafozo_tartalom.jpg') no-repeat center top;
     float: left;
     width: 49.8%;
     height: 517px;
@@ -94,9 +96,22 @@ body {
     -o-background-size: 100%;
     background-size: 100%;
 }
+.content-center-wrapper .page {
+    margin: 20px 20px 0;
+    padding-left: 40px;
+    overflow: scroll;
+    max-height: 438px;
+    display: none;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
 
-.contentRight {
-    background: url(../images/leparlokeszulek_menu_hetter.jpg) no-repeat center top;
+.content-center-wrapper .page.active {
+    display: block;
+}
+
+.content-right-wrapper {
+    background: url('/images/leparlokeszulek_menu_hetter.jpg') no-repeat center top;
     float: left;
     width: 21.37%;
     height: 342px;
@@ -110,53 +125,65 @@ body {
     background-size: 100%;
 }
 
-.contentRight ul {
+.content-right-wrapper ul {
     padding: 0;
     margin-left: -5px;
     list-style-type: none;
     margin-top: 26px;
 }
 
-.contentRight ul li {
+.content-right-wrapper ul li {
     height: 35px;
     cursor: pointer;
 }
 
-.contentRight ul li .lamp {
-    /*background: url(../images/lampa_inactive.png) no-repeat left top;*/
-    width: 86px;
+.content-right-wrapper ul li .lamp {
+    /*background: url('/images/lampa_inactive.png') no-repeat left top;*/
+    width: 100px;
     height: 47px;
-    display: inline-block;
+    float: left;
 }
 
-.contentRight ul li:active .lamp {
-    /*background: url(../images/lampa_animation.gif) no-repeat left top;*/
-    width: 86px;
-    height: 47px;
-    display: inline-block;
+// .content-right-wrapper ul li:active .lamp {
+    /*background: url('/images/lampa_animation.gif') no-repeat left top;*/
+    // width: 86px;
+    // height: 47px;
 }
 
-.contentRight ul li .menubg {
-    background: url(../images/menu.png) no-repeat left top;
-    width: 116px;
+.content-right-wrapper ul li .menubg {
+    background: url('/images/menu.png') no-repeat left top;
+    width: 103px;
     height: 47px;
-    display: inline-block;
     margin-left: -20px;
+    color: #fff;
+    float: left;
+    line-height: 2.8em;
+    padding-left: 13px;
+    color: #ddd;
+}
+.content-right-wrapper ul li:nth-child(5) .menubg {
+    letter-spacing: -1px;
 }
 
-.contentRight ul li:hover .menubg {
-    background: url(../images/menu_hover.png) no-repeat left top;
+
+.content-right-wrapper ul li:hover .menubg {
+    background: url('/images/menu_hover.png') no-repeat left top;
 }
 
-.contentRight ul li .gomb {
-    background: url(../images/gomb_inactive.png) no-repeat left center;
+.content-right-wrapper ul li .menubg.active {
+    background: url('/images/menu-active.png') no-repeat left top;
+    color: #fff;
+}
+
+.content-right-wrapper ul li .gomb {
+    background: url('/images/gomb_inactive.png') no-repeat left center;
     width: 20px;
     height: 47px;
-    display: inline-block;
+    float: left;
 }
 
-.contentRight ul li .gomb.active {
-    background: url(../images/gomb_active.png) no-repeat left center;
+.content-right-wrapper ul li .gomb.active {
+    background: url('/images/gomb_active.png') no-repeat left center;
 }
 
 .clearfix {
@@ -180,14 +207,14 @@ body {
 }
 
 @media (max-width: 900px) {
-    .contentLeft {
+    .content-left-wrapper {
         top: -96px;
         left: 69px;
     }
 }
 
 @media (max-width: 800px) {
-    .contentLeft {
+    .content-left-wrapper {
         top: -112px;
         left: 66px;
         width: 21.6%;
@@ -195,16 +222,16 @@ body {
 }
 
 @media (max-width: 370px) {
-    .contentLeft {
+    .content-left-wrapper {
         top: -183px;
         left: 51px;
         width: 20.3%;
     }
-    .contentCenter {
+    .content-center-wrapper {
         top: -210px;
         left: 33px;
     }
-    .contentRight {
+    .content-right-wrapper {
         width: 14.5%;
         top: -199px;
         left: 37px;
