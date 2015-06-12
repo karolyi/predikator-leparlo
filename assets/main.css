@@ -85,6 +85,18 @@ a {
     background-size: 100%;
 }
 
+.content-left-wrapper .gallery-wrapper {
+    position: relative;
+    margin: 25px 2px 0 20px;
+    height: 291px;
+    text-align: center;
+    padding-right: 14px;
+}
+.content-left-wrapper .gallery-wrapper a img {
+    margin-bottom: 5px;
+    max-width: 180px;
+}
+
 .content-center-wrapper {
     background: url('/images/palinkafozo_tartalom.jpg') no-repeat center top;
     float: left;
@@ -266,7 +278,7 @@ a {
 .ps-container:hover>.ps-scrollbar-y-rail:hover>.ps-scrollbar-y,
 .ps-container:hover.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
     background-color: #b98850;
-    box-shadow: 0px 0px 2px 2px 0px 0px 2px 2px #5A390F;
+    box-shadow: 0px 0px 2px 2px #5A390F;
 }
 
 .ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {

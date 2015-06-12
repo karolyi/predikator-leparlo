@@ -23,7 +23,6 @@
       audioElement.pause();
       audioElement.play();
     }
-    swingDirection = 'forward';
     swingLedsToMenu();
     var jqThisLamp = jqLiMenuElement.find('.lamp');
     var jqThisMenuBg = jqLiMenuElement.find('.menubg');
@@ -40,6 +39,7 @@
   };
 
   var swingLedsToMenu = function () {
+    swingDirection = 'forward';
     if (ledTimeoutId) {
       // Clear if there's any running swing
       clearTimeout(ledTimeoutId);
@@ -66,7 +66,7 @@
     var jqMenuLedToLight = $(jqMenuLeds.get(litLedId - 1));
     jqMenuLedToLight.addClass('active');
     if (doNextCycle) {
-      ledTimeoutId = setTimeout(lightUpNextLed, 30);
+      ledTimeoutId = setTimeout(lightUpNextLed, 100);
     } else {
       ledTimeoutId = null;
     }
@@ -83,20 +83,11 @@
     jqMenuUl = $('#menu-chooser');
     jqContentPages = $('.content-center-wrapper .page');
     maxMenuCount = jqMenuLeds.length;
-    $('.page').perfectScrollbar({
+    $('.page, .gallery-wrapper').perfectScrollbar({
       suppressScrollX: true
     });
+    swingLedsToMenu();
   };
-
-  // function menuClick(obj){
-  //     var src = "images/lampa_animation.gif";
-  //     obj.attr('src', src);
-  //     var t = setTimeout(function(){
-  //         var src = obj.attr('src')=="/images/lampa_animation.gif"?"/images/lampa_active.gif":"images/lampa_active.png";
-  //         obj.attr('src', src);
-  //         window.location = obj.data('location');
-  //     }, 3000);
-  // }
 
   $(document).ready(onReadyDocument);
 })(jQuery);
