@@ -6,6 +6,10 @@ body {
     color: #ddd;
 }
 
+a {
+    color: #ddd;
+}
+
 .mainContent {
     background: url('/images/palinkafozo_hatter.jpg') no-repeat top center;
     width: 100%;
@@ -97,17 +101,23 @@ body {
     background-size: 100%;
 }
 .content-center-wrapper .page {
-    margin: 20px 20px 0;
+    margin: 20px 4px 0 20px;
     padding-left: 40px;
-    overflow: scroll;
+    padding-right: 20px;
+    height: 438px;
     max-height: 438px;
     display: none;
     font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .content-center-wrapper .page.active {
     display: block;
+}
+
+.content-center-wrapper .page-6 {
+    text-align: center;
 }
 
 .content-right-wrapper {
@@ -127,9 +137,9 @@ body {
 
 .content-right-wrapper ul {
     padding: 0;
-    margin-left: -5px;
+    margin-left: -20px;
     list-style-type: none;
-    margin-top: 26px;
+    margin-top: 20px;
 }
 
 .content-right-wrapper ul li {
@@ -140,26 +150,27 @@ body {
 .content-right-wrapper ul li .lamp {
     /*background: url('/images/lampa_inactive.png') no-repeat left top;*/
     width: 100px;
-    height: 47px;
+    height: 38px;
     float: left;
 }
 
 // .content-right-wrapper ul li:active .lamp {
     /*background: url('/images/lampa_animation.gif') no-repeat left top;*/
     // width: 86px;
-    // height: 47px;
+    // height: 38px;
 }
 
 .content-right-wrapper ul li .menubg {
     background: url('/images/menu.png') no-repeat left top;
-    width: 103px;
-    height: 47px;
+    width: 106px;
+    height: 38px;
     margin-left: -20px;
     color: #fff;
     float: left;
-    line-height: 2.8em;
-    padding-left: 13px;
+    line-height: 2.5em;
+    padding-left: 10px;
     color: #ddd;
+    font-weight: bold;
 }
 .content-right-wrapper ul li:nth-child(5) .menubg {
     letter-spacing: -1px;
@@ -178,7 +189,7 @@ body {
 .content-right-wrapper ul li .gomb {
     background: url('/images/gomb_inactive.png') no-repeat left center;
     width: 20px;
-    height: 47px;
+    height: 38px;
     float: left;
 }
 
@@ -234,10 +245,30 @@ body {
     .content-right-wrapper {
         width: 14.5%;
         top: -199px;
-        left: 37px;
+        left: 38px;
     }
     .headRight {
         width: 17.9%;
         left: 26px;
     }
+}
+
+/* Scrollbar mods */
+
+.ps-container:hover>.ps-scrollbar-y-rail,
+.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail,
+.ps-container:hover.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail,
+.ps-container:hover>.ps-scrollbar-y-rail:hover {
+    background-color: transparent;
+}
+
+.ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y,
+.ps-container:hover>.ps-scrollbar-y-rail:hover>.ps-scrollbar-y,
+.ps-container:hover.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
+    background-color: #b98850;
+    box-shadow: 0px 0px 2px 2px 0px 0px 2px 2px #5A390F;
+}
+
+.ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
+    background-color: #C09260;
 }

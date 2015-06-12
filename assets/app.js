@@ -83,6 +83,9 @@
     jqMenuUl = $('#menu-chooser');
     jqContentPages = $('.content-center-wrapper .page');
     maxMenuCount = jqMenuLeds.length;
+    $('.page').perfectScrollbar({
+      suppressScrollX: true
+    });
   };
 
   // function menuClick(obj){
