@@ -1,0 +1,22 @@
+{
+  "name": "Hamori System",
+  "version": "0.0.0",
+  "authors": [
+    "László Károlyi <laszlo@karolyi.hu>"
+  ],
+  "description": "Predikator Leparlo",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

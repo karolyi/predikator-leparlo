@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    background-color: #000;
+    overflow-y: hidden;
+}
+
+.mainContent {
+    background: url(../images/palinkafozo_hatter.jpg) no-repeat top center;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.head {
+    /*margin-top: 10px;*/
+    margin-left: 40px;
+}
+
+.headLeft {
+    background: url(../images/predikator_leparlo_logo.png) no-repeat center top;
+    width: 26.35%;
+    height: 247px;
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 13px;
+    z-index: 2;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.headCenter {
+    background: url(../images/palinkafozo_fejlec.png) no-repeat center top;
+    width: 46.74%;
+    height: 144px;
+    float: left;
+    position: relative;
+    top: 5px;
+    z-index: 2;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.headRight {
+    background: url(../images/leparlo_menudisz.png) no-repeat center top;
+    width: 22.9%;
+    height: 99px;
+    float: left;
+    position: relative;
+    top: 25px;
+    z-index: 2;
+    left: 23px;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.contentLeft {
+    background: url(../images/leparlokeszulek.jpg) no-repeat center top;
+    float: left;
+    width: 21.95%;
+    height: 341px;
+    position: relative;
+    top: -65px;
+    left: 90px;
+    z-index: 2;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.contentCenter {
+    background: url(../images/palinkafozo_tartalom.jpg) no-repeat center top;
+    float: left;
+    width: 49.8%;
+    height: 517px;
+    position: relative;
+    z-index: 1;
+    top: -150px;
+    /*left: 25px;*/
+    left: 35px;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.contentRight {
+    background: url(../images/leparlokeszulek_menu_hetter.jpg) no-repeat center top;
+    float: left;
+    width: 21.37%;
+    height: 342px;
+    position: relative;
+    z-index: 101;
+    top: -121px;
+    left: 50px;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+}
+
+.contentRight ul {
+    padding: 0;
+    margin-left: -5px;
+    list-style-type: none;
+    margin-top: 26px;
+}
+
+.contentRight ul li {
+    height: 35px;
+    cursor: pointer;
+}
+
+.contentRight ul li .lamp {
+    /*background: url(../images/lampa_inactive.png) no-repeat left top;*/
+    width: 86px;
+    height: 47px;
+    display: inline-block;
+}
+
+.contentRight ul li:active .lamp {
+    /*background: url(../images/lampa_animation.gif) no-repeat left top;*/
+    width: 86px;
+    height: 47px;
+    display: inline-block;
+}
+
+.contentRight ul li .menubg {
+    background: url(../images/menu.png) no-repeat left top;
+    width: 116px;
+    height: 47px;
+    display: inline-block;
+    margin-left: -20px;
+}
+
+.contentRight ul li:hover .menubg {
+    background: url(../images/menu_hover.png) no-repeat left top;
+}
+
+.contentRight ul li .gomb {
+    background: url(../images/gomb_inactive.png) no-repeat left center;
+    width: 20px;
+    height: 47px;
+    display: inline-block;
+}
+
+.contentRight ul li .gomb.active {
+    background: url(../images/gomb_active.png) no-repeat left center;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#beep-three {
+    display: none;
+}
+
+.fust {
+    display: none;
+    background: transparent;
+    /*background-size: 100%;*/
+    width: 257px;
+    height: 300px;
+    /*    max-width: 1px;
+        max-height: 1px;*/
+    position: absolute;
+    z-index: 100;
+}
+
+@media (max-width: 900px) {
+    .contentLeft {
+        top: -96px;
+        left: 69px;
+    }
+}
+
+@media (max-width: 800px) {
+    .contentLeft {
+        top: -112px;
+        left: 66px;
+        width: 21.6%;
+    }
+}
+
+@media (max-width: 370px) {
+    .contentLeft {
+        top: -183px;
+        left: 51px;
+        width: 20.3%;
+    }
+    .contentCenter {
+        top: -210px;
+        left: 33px;
+    }
+    .contentRight {
+        width: 14.5%;
+        top: -199px;
+        left: 37px;
+    }
+    .headRight {
+        width: 17.9%;
+        left: 26px;
+    }
+}
