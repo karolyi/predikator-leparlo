@@ -29,6 +29,7 @@
     this.endSize = 40;
 
     this.rotateAngle = Math.random() * 360;
+    this.rotationAmount = Math.random() - 0.5;
 
     this.myStartTime = new Date().getTime();
     this.myLifeTime = 0;
@@ -36,13 +37,13 @@
     this.velX = -(Math.sin(((options.flyAngle - 180) / 180 % 1) * Math.PI) * Math.random() * options.velXMultiplier);
     this.velY = Math.sin(((options.flyAngle - 90) / 180 % 1) * Math.PI) * Math.random() * options.velXMultiplier;
     // Add random angle
-    this.velX = this.velX + (Math.random() - 0.5) * options.velXMultiplier / 2;
-    this.velY = this.velY + (Math.random() - 0.5) * options.velYMultiplier / 2;
+    // this.velX = this.velX + (Math.random() - 0.5) * options.velXMultiplier / 2;
+    // this.velY = this.velY + (Math.random() - 0.5) * options.velYMultiplier / 2;
   };
 
   Smoke.prototype.update = function () {
     this.myLifeTime = new Date().getTime() - this.myStartTime;
-    this.rotateAngle += 0.2;
+    this.rotateAngle += this.rotationAmount;
 
     var lifePercent = (this.myLifeTime / this.options.particleLifeTime);
 
@@ -83,6 +84,7 @@
   var start = function () {
     var options = this._smokePrivateData;
     options.startLife = new Date().getTime();
+    options.lastTime = new Date().getTime() - options.spawnAfter;
     options.stopTime = 0;
     if ($.type(options.smokeTime) === 'number') {
       options.stopTime = options.startLife + options.smokeTime;
@@ -103,21 +105,22 @@
       } else {
         partsElement.update();
 
-        // options.ctx.save();
-        var offsetX = partsElement.x - partsElement.size / 2;
-        var offsetY = partsElement.y - partsElement.size / 2;
-        // var offsetX -= partsElement.size / 2;
-        // var offsetY -= partsElement.size / 2;
+        options.ctx.save();
+        var offsetX = -partsElement.size / 2;
+        var offsetY = -partsElement.size / 2;
 
         // options.ctx.translate(
-        //   partsElement.x - offsetX,
-        //   partsElement.y - offsetY);
-        // options.ctx.rotate(partsElement.rotateAngle / 180 * Math.PI);
+        //   partsElement.x + offsetX,
+        //   partsElement.y + offsetY);
+        options.ctx.translate(
+          partsElement.x,
+          partsElement.y);
+        options.ctx.rotate(partsElement.rotateAngle / 180 * Math.PI);
         options.ctx.globalAlpha = partsElement.alpha;
         options.ctx.drawImage(
           smokeImage, offsetX, offsetY, partsElement.size,
           partsElement.size);
-        // options.ctx.restore();
+        options.ctx.restore();
         // console.debug('X Y', partsElement.x, partsElement.y);
       }
     }

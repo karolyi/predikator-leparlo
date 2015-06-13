@@ -90,12 +90,12 @@
     swingLedsToMenu();
     $('#smoke-1').smoke({
       autoStart: true,
-      smokeTime: 2000,
-      spawnAfter: 50,
-      emitterX: 18,
-      emitterY: 50,
-      particleLifeTime: 1000,
-      flyAngle: 70,
+      smokeTime: 1000,
+      spawnAfter: 10,
+      emitterX: 10,
+      emitterY: 48,
+      particleLifeTime: 2000,
+      flyAngle: 80,
       velXMultiplier: 2
     });
   };
