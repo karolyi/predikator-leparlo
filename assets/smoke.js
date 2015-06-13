@@ -37,8 +37,8 @@
     this.velX = -(Math.sin(((options.flyAngle - 180) / 180 % 1) * Math.PI) * Math.random() * options.velXMultiplier);
     this.velY = Math.sin(((options.flyAngle - 90) / 180 % 1) * Math.PI) * Math.random() * options.velXMultiplier;
     // Add random angle
-    // this.velX = this.velX + (Math.random() - 0.5) * options.velXMultiplier / 2;
-    // this.velY = this.velY + (Math.random() - 0.5) * options.velYMultiplier / 2;
+    this.velX = this.velX + (Math.random() - 0.5) * options.velXMultiplier / 2;
+    this.velY = this.velY + (Math.random() - 0.5) * options.velYMultiplier / 2;
   };
 
   Smoke.prototype.update = function () {
