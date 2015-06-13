@@ -36,6 +36,7 @@
     jqThisMenuBg.addClass('active');
     jqContentPages.not(jqThisContentPage).removeClass('active');
     jqThisContentPage.addClass('active');
+    $('#smoke-1').smoke('start');
   };
 
   var swingLedsToMenu = function () {
@@ -87,6 +88,16 @@
       suppressScrollX: true
     });
     swingLedsToMenu();
+    $('#smoke-1').smoke({
+      autoStart: true,
+      smokeTime: 2000,
+      spawnAfter: 50,
+      emitterX: 18,
+      emitterY: 50,
+      particleLifeTime: 1000,
+      flyAngle: 70,
+      velXMultiplier: 2
+    });
   };
 
   $(document).ready(onReadyDocument);

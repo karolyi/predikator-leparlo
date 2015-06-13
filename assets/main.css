@@ -284,3 +284,10 @@ a {
 .ps-container.ps-in-scrolling.ps-y>.ps-scrollbar-y-rail>.ps-scrollbar-y {
     background-color: #C09260;
 }
+
+/* Smoke canvas setup */
+
+#smoke-1 {
+    width: 300px;
+    height: 140px;
+}
