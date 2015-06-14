@@ -4,7 +4,8 @@
  * Made by http://linkedin.com/in/karolyi
  */
 (function ($) {
-  var audioElement;
+  var zapAudio;
+  var hissAudio;
   var ledTimeoutId;
   var litLedId = 0;
   var swingDirection;
@@ -16,13 +17,22 @@
   var jqMenuBgs;
   var jqContentPages;
 
+  var playHiss = function () {
+    if (hissAudio.pause && hissAudio.play) {
+      hissAudio.pause();
+      hissAudio.play();
+    }
+    $('#smoke-1').smoke('start');
+  };
+
   var onClickMenu = function () {
     var jqLiMenuElement = $(this);
     actualMenuId = parseInt(jqLiMenuElement.data('menuid'), 10);
-    if (audioElement.pause && audioElement.play) {
-      audioElement.pause();
-      audioElement.play();
+    if (zapAudio.pause && zapAudio.play) {
+      zapAudio.pause();
+      zapAudio.play();
     }
+    setTimeout(playHiss, 1800);
     swingLedsToMenu();
     var jqThisLamp = jqLiMenuElement.find('.lamp');
     var jqThisMenuBg = jqLiMenuElement.find('.menubg');
@@ -36,7 +46,6 @@
     jqThisMenuBg.addClass('active');
     jqContentPages.not(jqThisContentPage).removeClass('active');
     jqThisContentPage.addClass('active');
-    $('#smoke-1').smoke('start');
   };
 
   var swingLedsToMenu = function () {
@@ -76,7 +85,8 @@
   var onReadyDocument = function () {
     // Startup functions
     $('.mainContent').height($(window).height());
-    audioElement = $('#beep-three')[0];
+    zapAudio = $('#audio-zap')[0];
+    hissAudio = $('#audio-hiss')[0];
     $('#menu-chooser li').click(onClickMenu);
     jqMenuLeds = $('#menu-chooser li .gomb');
     jqMenuLamps = $('#menu-chooser li .lamp');
@@ -89,7 +99,7 @@
     });
     swingLedsToMenu();
     $('#smoke-1').smoke({
-      autoStart: true,
+      autoStart: false,
       smokeTime: 1000,
       spawnAfter: 10,
       emitterX: 10,
