@@ -120,8 +120,16 @@ a {
     max-height: 438px;
     display: none;
     font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.2);
     position: relative;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.content-center-wrapper .background {
+    position: absolute;
+    bottom: 12%;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+
 }
 
 .content-center-wrapper .page.active {
@@ -183,6 +191,7 @@ a {
     padding-left: 10px;
     color: #ddd;
     font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .content-right-wrapper ul li:nth-child(5) .menubg {
     letter-spacing: -1px;
@@ -227,6 +236,13 @@ a {
         max-height: 1px;*/
     position: absolute;
     z-index: 100;
+}
+
+@media (max-width: 1080px) {
+    .content-center-wrapper .background {
+        bottom: auto;
+        height: 85%;
+    }
 }
 
 @media (max-width: 900px) {
@@ -290,16 +306,23 @@ a {
     top: -120px;
     text-align: center;
     color: #D2BD99;
-    font-size: 10px;
+    font-size: 15px;
+    line-height: 1.5em;
 }
 
 .credits a {
     color: #D2BD99;
 }
-
+.credits .partner-link {
+    font-size: 0;
+}
+.credits .partner-link img {
+    vertical-align: top;
+}
 /* Smoke canvas setup */
 
 #smoke-1 {
     width: 800px;
     height: 140px;
 }
+
